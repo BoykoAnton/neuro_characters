@@ -17,6 +17,7 @@ namespace neuro_characters
 
         public Form1()//initialization
         {
+            //output different text:
             InitializeComponent();
             this.Text = "Neuro WEB by A.B.";
             button1.Text = "Распознать";
@@ -27,6 +28,15 @@ namespace neuro_characters
             button2.Text = "Открыть";
             button3.Text = "Изучить!";
             pictureBox1.BackColor = Color.Aqua;
+
+            char tmp = 'А';//tmp var
+
+            for (int i = 0; i < SIZE_NEURO; i++)//output all letters
+            {
+                listBox1.Items.Insert(i,tmp.ToString() + "= 0");
+                tmp = (char)((int)(tmp) + 1);
+            }
+
             update();
         }
 
@@ -49,21 +59,28 @@ namespace neuro_characters
         {
             int result = 0,
                 max = 0;
+            char tmp = 'А';//tmp var
 
             for (int i = 0; i < SIZE_NEURO; i++)//calculate each neuron
             {
                 neuro_web[i].calc(forCheck); //calc neuron number i
             }
 
+            listBox1.Items.Clear();//clear list for results
+
             for (int i = 0; i < SIZE_NEURO; i++)//search true letter
             {
+                //print weigth of neurons:
+                
+                listBox1.Items.Insert(i, tmp.ToString() + "  =  " + neuro_web[i].weight);
+                tmp = (char)((int)(tmp) + 1);
                 if (neuro_web[i].weight > max)
                 {
                     max = neuro_web[i].weight;//weight of true letter
                     result = i;//number of true neuron
                 }
             }
-
+            
             return neuro_web[result].name;//return name of true neuron
         }
 
