@@ -1,0 +1,8 @@
+D:\GitHub\neuro_characters\neuro_characters\bin\Debug\neuro_characters.exe.config
+D:\GitHub\neuro_characters\neuro_characters\bin\Debug\neuro_characters.exe
+D:\GitHub\neuro_characters\neuro_characters\bin\Debug\neuro_characters.pdb
+D:\GitHub\neuro_characters\neuro_characters\obj\Debug\neuro_characters.csprojResolveAssemblyReference.cache
+D:\GitHub\neuro_characters\neuro_characters\obj\Debug\neuro_characters.Properties.Resources.resources
+D:\GitHub\neuro_characters\neuro_characters\obj\Debug\neuro_characters.csproj.GenerateResource.Cache
+D:\GitHub\neuro_characters\neuro_characters\obj\Debug\neuro_characters.exe
+D:\GitHub\neuro_characters\neuro_characters\obj\Debug\neuro_characters.pdb
