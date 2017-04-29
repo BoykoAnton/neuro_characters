@@ -8,10 +8,27 @@ namespace neuro_characters
 {
     class neuron
     {
+
         private const int SIZE = 29;
         public string name;
-        public int [,] input = new int[SIZE, SIZE];
-        public int [,] memory = new int[SIZE, SIZE];
+        public int[,] input = new int[SIZE, SIZE];
+        public int[,] memory = new int[SIZE, SIZE];
         public int weight;
+
+        public neuron()
+        {
+
+        }
+
+        public neuron(string name)
+        {
+            this.name = name;    
+        }
+
+        public neuron(string name, int weight)
+        {
+            this.name = name;
+            this.weight = weight;
+        }
     }
 }

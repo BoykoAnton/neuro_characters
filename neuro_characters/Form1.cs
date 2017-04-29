@@ -23,8 +23,20 @@ namespace neuro_characters
             label3.Text = "Изучить?";
             button2.Text = "Открыть";
             button3.Text = "Изучить!";
-                //TODO:
             pictureBox1.BackColor = Color.Aqua;
+            update();
+        }
+
+        public void update()
+        {
+            const int SIZE_NEURO = 33;
+            neuron[] neuro_web = new neuron[SIZE_NEURO];
+            char tmp = 'А';
+            for (int i = 0; i < SIZE_NEURO; i++)
+            {
+                neuro_web[i] = new neuron(tmp.ToString(), 0);
+                tmp = (char)((int)(tmp) + 1);
+            }
         }
     }
 }
