@@ -16,6 +16,15 @@ namespace neuro_characters
         {
             InitializeComponent();
             this.Text = "Neuro WEB by A.B.";
+            button1.Text = "Распознать";
+            groupBox1.Text = "Обучение";
+            label1.Text = "Введите букву для изучения";
+            label2.Text = "Откройте файл .bmp";
+            label3.Text = "Изучить?";
+            button2.Text = "Открыть";
+            button3.Text = "Изучить!";
+                //TODO:
+            pictureBox1.BackColor = Color.Aqua;
         }
     }
 }

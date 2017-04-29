@@ -6,3 +6,4 @@ D:\GitHub\neuro_characters\neuro_characters\obj\Debug\neuro_characters.Propertie
 D:\GitHub\neuro_characters\neuro_characters\obj\Debug\neuro_characters.csproj.GenerateResource.Cache
 D:\GitHub\neuro_characters\neuro_characters\obj\Debug\neuro_characters.exe
 D:\GitHub\neuro_characters\neuro_characters\obj\Debug\neuro_characters.pdb
+D:\GitHub\neuro_characters\neuro_characters\obj\Debug\neuro_characters.Form1.resources
