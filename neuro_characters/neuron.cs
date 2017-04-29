@@ -10,10 +10,11 @@ namespace neuro_characters
     class neuron
     {
 
-        private const int SIZE = 29;
+        private const int SIZE = 30;
         public string name;
-        public int[,] input = new int[SIZE, SIZE];
+        //public int[,] input = new int[SIZE, SIZE];
         //public int[,] memory = new int[SIZE, SIZE];
+        public Bitmap input;
         public Bitmap memory;
         public int weight;
 
@@ -38,6 +39,34 @@ namespace neuro_characters
             const string FOLDER_RES = "D:\\GitHub\\neuro_characters\\neuro_characters\\res\\";
             Bitmap tmp = (Bitmap)Image.FromFile(FOLDER_RES + name + ".bmp", true);
             memory = tmp;
+        }
+
+        public void calc(Bitmap ainput)
+        {
+            this.load_memory();
+            Color pxInput,
+                  pxMemory;
+            int m, n;
+            this.input = ainput;
+
+            for (int x = 0; x < SIZE; x++)
+            {
+                for (int y = 0; y < SIZE; y++)
+                {
+                    pxInput = input.GetPixel(x, y);
+                    pxMemory = memory.GetPixel(x, y);
+                    m = (int) pxInput.GetBrightness();
+                    n = (int) pxMemory.GetBrightness();
+                    
+                    if (Math.Abs(m - n) < 120)
+                    {
+                        if (m < 250)
+                        {
+                            weight++;
+                        }
+                    }
+                }
+            }
         }
     }
 }
