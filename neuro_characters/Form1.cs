@@ -102,7 +102,7 @@ namespace neuro_characters
             {
                 Bitmap tmp = (Bitmap)Image.FromFile(openFileDialog1.FileName, true);//load bmp 
                 pictureBox1.Image = (Image) tmp;//show bmp
-                label3.Text = calculate(tmp);//TMP
+                MessageBox.Show("Найденая буква = " + calculate(tmp));//show result to user
             }
         }
 
