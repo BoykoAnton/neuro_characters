@@ -86,7 +86,14 @@ namespace neuro_characters
 
         public void learn()
         {
-
+            Bitmap tmp = (Bitmap)Image.FromFile(fileToLearn, true);
+            for (int i = 0; i < SIZE_NEURO; i++)
+            {
+                if (letterToLearn == neuro_web[i].name)
+                {
+                    neuro_web[i].learn(tmp);
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)//click on button "Raspoznat`"

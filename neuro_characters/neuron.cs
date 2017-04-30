@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,7 @@ namespace neuro_characters
         public Bitmap input;
         public Bitmap memory;
         public int weight;
+        private const string FOLDER_RES = "D:\\GitHub\\neuro_characters\\neuro_characters\\res\\";
 
         public neuron()
         {
@@ -36,7 +38,7 @@ namespace neuro_characters
 
         public void load_memory()
         {
-            const string FOLDER_RES = "D:\\GitHub\\neuro_characters\\neuro_characters\\res\\";
+            
             Bitmap tmp = (Bitmap)Image.FromFile(FOLDER_RES + name + ".bmp", true);
             memory = tmp;
         }
@@ -71,7 +73,10 @@ namespace neuro_characters
 
         public void learn(Bitmap toLearn)
         {
-
+            memory.Dispose();
+            File.Delete(FOLDER_RES + name + ".bmp");
+            toLearn.Save(FOLDER_RES + name + ".bmp");
+            load_memory();
         }
     }
 }
