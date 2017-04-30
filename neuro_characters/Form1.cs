@@ -13,6 +13,7 @@ namespace neuro_characters
     public partial class Form1 : Form
     {
         const int SIZE_NEURO = 32;//count neurons
+        string fileToLearn, letterToLearn;
         neuron[] neuro_web = new neuron[SIZE_NEURO];//creating array of neurons
 
         public Form1()//initialization
@@ -59,7 +60,6 @@ namespace neuro_characters
         {
             int result = 0,
                 max = 0;
-            char tmp = 'А';//tmp var
 
             for (int i = 0; i < SIZE_NEURO; i++)//calculate each neuron
             {
@@ -72,8 +72,8 @@ namespace neuro_characters
             {
                 //print weigth of neurons:
                 
-                listBox1.Items.Insert(i, tmp.ToString() + "  =  " + neuro_web[i].weight);
-                tmp = (char)((int)(tmp) + 1);
+                listBox1.Items.Insert(i, neuro_web[i].name + "  =  " + neuro_web[i].weight);
+                
                 if (neuro_web[i].weight > max)
                 {
                     max = neuro_web[i].weight;//weight of true letter
@@ -84,6 +84,11 @@ namespace neuro_characters
             return neuro_web[result].name;//return name of true neuron
         }
 
+        public void learn()
+        {
+
+        }
+
         private void button1_Click(object sender, EventArgs e)//click on button "Raspoznat`"
         {
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -92,6 +97,22 @@ namespace neuro_characters
                 pictureBox1.Image = (Image) tmp;//show bmp
                 label3.Text = calculate(tmp);//TMP
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)//open file to learn
+        {
+            if (openFileDialog2.ShowDialog() == DialogResult.OK)
+            {
+                Bitmap tmp = (Bitmap)Image.FromFile(openFileDialog2.FileName, true);//load bmp 
+                pictureBox1.Image = (Image)tmp;//show bmp
+                fileToLearn = openFileDialog2.FileName;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)//learn letter
+        {
+            letterToLearn = textBox1.Text;
+            learn();
         }
     }
 }

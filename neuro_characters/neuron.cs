@@ -46,7 +46,7 @@ namespace neuro_characters
             this.load_memory();
             Color pxInput,
                   pxMemory;
-            int m, n;
+            float m, n;
             this.input = ainput;
 
             for (int x = 0; x < SIZE; x++)
@@ -55,10 +55,10 @@ namespace neuro_characters
                 {
                     pxInput = input.GetPixel(x, y);
                     pxMemory = memory.GetPixel(x, y);
-                    m = (int) pxInput.GetBrightness();
-                    n = (int) pxMemory.GetBrightness();
+                    m = pxInput.R;
+                    n = pxMemory.R;
                     
-                    if (Math.Abs(m - n) < 120)
+                    if (Math.Abs(m - n) < 20)
                     {
                         if (m < 250)
                         {
@@ -67,6 +67,11 @@ namespace neuro_characters
                     }
                 }
             }
+        }
+
+        public void learn(Bitmap toLearn)
+        {
+
         }
     }
 }
